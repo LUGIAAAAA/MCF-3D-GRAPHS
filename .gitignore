@@ -1,0 +1,16 @@
+# Nothing to ignore - we want all visualizations
+# These are production-ready HTML files
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs (if any)
+*.log
+

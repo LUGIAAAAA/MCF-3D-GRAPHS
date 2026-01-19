@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCF Framework | 3D Visualizations</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(0,255,255,0.1) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(0,255,255,0.3);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: #0ff;
+            text-shadow: 0 0 30px rgba(0,255,255,0.5);
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(20,20,20,0.8);
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            color: #888;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+        }
+        
+        .nav a:hover {
+            color: #0ff;
+            border-color: #0ff;
+            box-shadow: 0 0 20px rgba(0,255,255,0.3);
+        }
+        
+        .nav a.active {
+            color: #0ff;
+            border-color: #0ff;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1200px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+        
+        .chart-container {
+            background: rgba(10,10,10,0.9);
+            border: 1px solid rgba(0,255,255,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .chart-container:hover {
+            border-color: rgba(0,255,255,0.5);
+            box-shadow: 0 0 30px rgba(0,255,255,0.1);
+        }
+        
+        .chart-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,255,255,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chart-header h3 {
+            color: #0ff;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+        }
+        
+        .chart-header .tag {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            background: rgba(0,255,255,0.1);
+            border: 1px solid rgba(0,255,255,0.3);
+            color: #0ff;
+        }
+        
+        .chart-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        
+        .chart-desc {
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.5);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(0,255,255,0.2);
+            color: rgba(255,255,255,0.4);
+            font-size: 0.75rem;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px currentColor;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MCF FRAMEWORK</h1>
+        <div class="subtitle">MULTI-CONFIRMATION FRAMEWORK | 3D VISUALIZATION SUITE</div>
+    </div>
+    
+    <nav class="nav">
+        <a href="index.html">← MAIN DASHBOARD</a>
+        <a href="mcf_ultra_suite.html">MCF ULTRA</a>
+        <a href="iros_neural_insane.html">IROS NEURAL</a>
+        <a href="#" class="active">MCF FRAMEWORK</a>
+    </nav>
+    
+    <div class="grid">
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>VPVR TERRAIN MAP</h3>
+                <span class="tag">VOLUME PROFILE</span>
+            </div>
+            <iframe class="chart-frame" src="mcf_vpvr.html"></iframe>
+            <div class="chart-desc">
+                3D volume profile terrain. Mountains = High Volume Nodes (HVN) where price gets stuck. 
+                Valleys = Low Volume Nodes (LVN) where price moves fast. White line = price path traveling through terrain.
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>ENTRY SEQUENCE STATE MACHINE</h3>
+                <span class="tag">TEST→BREAK→RETEST→REJECTION</span>
+            </div>
+            <iframe class="chart-frame" src="mcf_entry.html"></iframe>
+            <div class="chart-desc">
+                4-stage entry validation. Price must pass through each checkpoint plane. 
+                Green path = successful sequence. Red path = failed entry that fell off.
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>MULTI-TIMEFRAME ALIGNMENT TOWER</h3>
+                <span class="tag">TREND STACK</span>
+            </div>
+            <iframe class="chart-frame" src="mcf_mtf.html"></iframe>
+            <div class="chart-desc">
+                Stacked timeframes from Weekly (bottom) to 15m (top). 
+                Green = bullish, Red = bearish. Full alignment = TRADE. Mixed colors = NO TRADE.
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>MCF SCORE CRYSTAL</h3>
+                <span class="tag">4-AXIS SCORE</span>
+            </div>
+            <iframe class="chart-frame" src="mcf_crystal.html"></iframe>
+            <div class="chart-desc">
+                4-axis scoring: Structure (35%), Volume (25%), Volatility (25%), Proximity (15%). 
+                Full crystal = high score. Collapsed = weak setup. Yellow threshold at 6.0.
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>GUARDING LINE SAFETY CONE</h3>
+                <span class="tag">RISK MANAGEMENT</span>
+            </div>
+            <iframe class="chart-frame" src="mcf_cone.html"></iframe>
+            <div class="chart-desc">
+                Trade protection zone. Green cone = safe zone. If price exits cone = EXIT TRIGGERED. 
+                Cone width based on volatility and guarding line slope.
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-header">
+                <h3>LIQUIDITY WATERFALL</h3>
+                <span class="tag">ORDER FLOW</span>
+            </div>
+            <iframe class="chart-frame" src="mcf_waterfall.html"></iframe>
+            <div class="chart-desc">
+                Volume profile as waterfall. Wide sections = HVN (liquidity pools, price slows). 
+                Narrow sections = LVN (price falls fast). Blue = slow flow, White = fast flow.
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        MCF FRAMEWORK VISUALIZATION SUITE | MULTI-CONFIRMATION FRAMEWORK<br>
+        <span class="glow-text" style="color: #0ff;">INSTITUTIONAL GRADE TRADE ANALYSIS</span>
+    </footer>
+</body>
+</html>

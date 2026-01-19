@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MCF Ultra - 3D Visualization Suite</title>
+    <meta charset="utf-8">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: linear-gradient(135deg, rgb(5, 5, 15) 0%, rgb(10, 15, 30) 100%);
+            color: white;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 200;
+            color: #00ff88;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px rgba(0,255,136,0.5);
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1em;
+        }
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: #aaa;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .card {
+            background: rgba(10, 10, 25, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0,255,136,0.2);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: white;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,255,136,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        .card:hover::before {
+            left: 100%;
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+            border-color: rgba(0, 255, 136, 0.5);
+        }
+        .card h2 {
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-size: 1.4em;
+        }
+        .card p {
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .card .formula {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: #aaa;
+            font-size: 0.95em;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 5px;
+        }
+        .card .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px currentColor;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #444;
+            font-size: 0.9em;
+        }
+        .glow {
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px currentColor; }
+            to { text-shadow: 0 0 30px currentColor, 0 0 50px currentColor; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glow">MCF ULTRA</h1>
+    <p class="subtitle">
+        3D Visualization Suite | Institutional Quant Analytics<br>
+        <span class="math">Ψ(x,t) = F(regime, volatility, structure, momentum)</span>
+    </p>
+    
+    <div class="grid">
+        <a href="mcf_regime_surface.html" class="card">
+            <div class="icon" style="color: #00ff88;">📊</div>
+            <h2>Regime Dynamics Surface</h2>
+            <p>3D surface showing MCF score across volatility and returns dimensions. Identifies optimal trading conditions.</p>
+            <div class="formula">Z(v,r) = f(σ_ratio, r_5d) → MCF Score</div>
+        </a>
+        
+        <a href="mcf_tda_bubble.html" class="card">
+            <div class="icon" style="color: #ff4488;">🔬</div>
+            <h2>TDA Bubble Landscape</h2>
+            <p>Topological Data Analysis for bubble detection. Persistence entropy across time and scale.</p>
+            <div class="formula">B(t,ε) = 1 - H(PD(X_t, ε))</div>
+        </a>
+        
+        <a href="mcf_signal_manifold.html" class="card">
+            <div class="icon" style="color: #4488ff;">🌐</div>
+            <h2>Signal Strength Manifold</h2>
+            <p>3D visualization of tradeable signal regions in factor space. Structure × Volume × Volatility.</p>
+            <div class="formula">Ψ(s,v,σ) = Σ w_i · f_i + confluence</div>
+        </a>
+        
+        <a href="mcf_hmm_topology.html" class="card">
+            <div class="icon" style="color: #ffaa44;">🔗</div>
+            <h2>HMM Transition Topology</h2>
+            <p>Hidden Markov Model state transitions. Regime persistence and change probabilities.</p>
+            <div class="formula">P(R_t | R_{t-1}) = Transition Matrix</div>
+        </a>
+        
+        <a href="mcf_equity_regime.html" class="card">
+            <div class="icon" style="color: #ff6644;">📈</div>
+            <h2>Equity-Regime Correlation</h2>
+            <p>Backtest performance with regime annotations. WAVE model for trend persistence analysis.</p>
+            <div class="formula">Is this where trends persist, or chop?</div>
+        </a>
+        
+        <a href="index.html" class="card">
+            <div class="icon" style="color: #888;">🏠</div>
+            <h2>Back to Dashboard Hub</h2>
+            <p>Return to the main MCF Labs dashboard with all visualizations.</p>
+            <div class="formula">← Previous visualizations</div>
+        </a>
+    </div>
+    
+    <div class="footer">
+        MCF Labs | Institutional Quant Research<br>
+        Inspired by quant_research_decoded
+    </div>
+</body>
+</html>

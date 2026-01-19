@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MCF Labs - Dashboard Hub</title>
+    <meta charset="utf-8">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: linear-gradient(135deg, rgb(5, 5, 15) 0%, rgb(15, 15, 30) 100%);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            font-weight: 200;
+            color: #00ff88;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .card {
+            background: rgba(20, 20, 35, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.15);
+            border-color: rgba(0, 255, 136, 0.3);
+        }
+        .card h2 {
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .card p {
+            color: #888;
+            line-height: 1.6;
+        }
+        .card .icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .section-title {
+            color: #888;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            border-left: 3px solid #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <h1>MCF LABS</h1>
+    <p class="subtitle">Research Integration Dashboard Hub</p>
+    
+    <div class="section">
+        <div class="section-title">Live Dashboards</div>
+        <div class="grid">
+            <a href="mcf_live_dashboard.html" class="card">
+                <div class="icon">📊</div>
+                <h2>Live Market Dashboard</h2>
+                <p>Real-time market context from Helsinki VM. Volatility regime, smart money, options skew, funding rates.</p>
+            </a>
+            <a href="agent_coordination.html" class="card">
+                <div class="icon">🤖</div>
+                <h2>Agent Coordination</h2>
+                <p>Multi-agent research integration status. Track progress across all agents.</p>
+            </a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Backtest Animations</div>
+        <div class="grid">
+            <a href="backtest_animation.html" class="card">
+                <div class="icon">📈</div>
+                <h2>Equity Animation</h2>
+                <p>Walk-forward equity curve animation with regime overlays and position tracking.</p>
+            </a>
+            <a href="drawdown_animation.html" class="card">
+                <div class="icon">📉</div>
+                <h2>Drawdown Underwater</h2>
+                <p>Animated drawdown visualization showing underwater periods.</p>
+            </a>
+            <a href="sharpe_animation.html" class="card">
+                <div class="icon">⚡</div>
+                <h2>Rolling Sharpe</h2>
+                <p>Rolling Sharpe ratio animation with performance zones.</p>
+            </a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">3D Regime Visualizations</div>
+        <div class="grid">
+            <a href="regime_3d_scatter.html" class="card">
+                <div class="icon">🌐</div>
+                <h2>Regime State Space</h2>
+                <p>3D scatter plot of market regime states in feature space.</p>
+            </a>
+            <a href="regime_3d_clusters.html" class="card">
+                <div class="icon">🔮</div>
+                <h2>Regime Clusters</h2>
+                <p>Convex hull visualization of regime cluster boundaries.</p>
+            </a>
+            <a href="regime_3d_evolution.html" class="card">
+                <div class="icon">🎬</div>
+                <h2>Regime Evolution</h2>
+                <p>Animated time evolution through regime state space.</p>
+            </a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Topological Data Analysis</div>
+        <div class="grid">
+            <a href="tda_takens.html" class="card">
+                <div class="icon">🌀</div>
+                <h2>Takens Embedding</h2>
+                <p>Phase space reconstruction of price dynamics.</p>
+            </a>
+            <a href="tda_persistence.html" class="card">
+                <div class="icon">🔷</div>
+                <h2>Persistence Diagram</h2>
+                <p>Topological features birth/death visualization.</p>
+            </a>
+            <a href="tda_betti.html" class="card">
+                <div class="icon">📐</div>
+                <h2>Betti Curves</h2>
+                <p>Betti number evolution across scales.</p>
+            </a>
+            <a href="tda_stability.html" class="card">
+                <div class="icon">⚠️</div>
+                <h2>Stability Index</h2>
+                <p>Topological stability and bubble signals over time.</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
